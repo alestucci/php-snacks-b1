@@ -83,5 +83,31 @@
         </ul>
     </section>
 
+    <section>
+        <h2>Snack 2</h2>
+        <form action="" method="get">
+            <input type="text" name="name" id="name" placeholder="Nome" >
+            <input type="text" name="email" id="email" placeholder="eMail" >
+            <input type="text" name="age" id="age" placeholder="Età">
+            <button>Accedi</button>
+        </form>
+        <?php
+            $name = $_GET['name'];
+            $email = $_GET['email'];
+            $age = $_GET['age'];
+            if (
+                (strlen($name) > 3) 
+                && (strpos($email, "@") !== false)
+                && (strpos($email,".",strpos($email, "@")))
+                && (is_numeric($age))
+                ) {
+                echo 'Accesso riuscito';
+            } else {
+                echo 'Accesso negato';
+            }
+        ?>
+    </section>
+
+    
 </body>
 </html>
