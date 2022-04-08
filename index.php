@@ -104,10 +104,23 @@
                 echo 'Accesso riuscito';
             } else {
                 echo 'Accesso negato';
-            }
+            };
         ?>
     </section>
 
-    
+    <section>
+        <h2>Snack 4</h2>
+        <?php
+            $random_numbers_array = [];
+            while (count($random_numbers_array) < 15) {
+                $random_number = rand(1, 99);
+                if (!in_array($random_number, $random_numbers_array)) {
+                    $random_numbers_array[] = $random_number;
+                };
+            };
+            var_dump($random_numbers_array);
+        ?>
+    </section>
+
 </body>
 </html>
